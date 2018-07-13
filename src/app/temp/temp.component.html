@@ -1,0 +1,25 @@
+<div class="container color-dark">
+    Temp count is ({{variable}}) <br/> Router parameter value is {{routerParamet}}
+    <div class="col">
+        <p> add bubket</p>
+    </div>
+    <div class="col">
+        <p> your bucket list </p>
+    </div>
+
+</div>
+<div class="container color-light" [@trigger]="list.length">
+    <div class="col">
+        <p class="sm"> type which ou wan to do </p>
+        <form>
+            <input type="text" name="item" [(ngModel)]="finalText" required/>
+            <span>You have entered ......{{finalText}}</span>
+            <!-- <input type="submit" class="btn" value="{{buttonText}}" name="item" /> different way of property binding-->
+            <input type="submit" class="btn" [value]="buttonText" name="item" (click)="addItem()" />
+
+        </form>
+    </div>
+    <div class="col">
+        <p *ngFor="let local of list;let i = index" (click)="removeItem(i)"> {{local}} </p>
+    </div>
+</div>
