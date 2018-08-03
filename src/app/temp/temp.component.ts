@@ -33,6 +33,7 @@ export class TempComponent implements OnInit {
   buttonText : string = 'Add item (added)';
   finalText : string = 'nothing';
   routerParamet : string = '';
+  ngtemplate = false;
   constructor(private routervalue: ActivatedRoute) { 
     this.routervalue.params.subscribe(res => this.routerParamet = res.id);
   }
