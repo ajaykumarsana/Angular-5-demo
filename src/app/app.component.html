@@ -1,6 +1,22 @@
-<ul>
-    <li><a routerLink="">newComp</a></li>
-    <li><a routerLink="temp/routeparameter">temp</a></li>
-</ul>
+<ngb-alert [ngClass]="'customClass'">
+    Bootstrap alert component with custom class
+</ngb-alert>
+<nav class="navbar navbar-light bg-dark">
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link" [ngStyle]="{'color':primaryColor}" routerLink="">newComp</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [ngStyle]="{'color':primaryColor}" routerLink="temp/routeparameter">temp</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [ngStyle]="{'color':primaryColor}" routerLink="IO">IO</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [ngStyle]="{'color':primaryColor}" routerLink="stock">Stock</a>
+        </li>
+
+    </ul>
+</nav>
 <!-- <app-temp></app-temp>Commented as router got added in router component -->
 <router-outlet></router-outlet>

@@ -1,0 +1,7 @@
+<app-stock-overview [addedStock]="addedStock"></app-stock-overview>
+<hr/>
+<div class="row justify-content-center">
+    <div class="card-group" *ngFor="let stock of stocks">
+        <app-stock-card [title]="stock.title" [companyName]="stock.companyName" [imgUrl]="stock.imgUrl" (addToList)="addedStock = $event"></app-stock-card>
+    </div>
+</div>

@@ -15,11 +15,19 @@
             <input type="text" name="item" [(ngModel)]="finalText" required/>
             <span>You have entered ......{{finalText}}</span>
             <!-- <input type="submit" class="btn" value="{{buttonText}}" name="item" /> different way of property binding-->
-            <input type="submit" class="btn" [value]="buttonText" name="item" (click)="addItem()" />
+            <input type="submit" class="btn btn-secondary" [value]="buttonText" name="item" (click)="addItem()" />
 
         </form>
     </div>
     <div class="col">
         <p *ngFor="let local of list;let i = index" (click)="removeItem(i)"> {{local}} </p>
+
+        <input type="checkbox" name="item" [(ngModel)]="ngtemplate" required/>Capitalize:
+        <p *ngIf="!ngtemplate else capitalize">Check to this to see capitalize</p>
+
+        <ng-template #capitalize>
+            <p>After captilize pipe with ng-template</p>
+            <p *ngFor="let local of list;let i = index" (click)="removeItem(i)"> {{local | capital}} </p>
+        </ng-template>
     </div>
 </div>
